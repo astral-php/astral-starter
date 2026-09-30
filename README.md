@@ -7,9 +7,9 @@ Pas d’articles, pas d’API démo, pas de `/docs` : une base vierge pour votre
 [![PHP](https://img.shields.io/badge/PHP-8.1%E2%80%938.5-777BB4?logo=php&logoColor=white)](https://www.php.net)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](./CHANGELOG.md)
 
-> Hub produit : voir `astral.md` dans le dépôt [astral](https://github.com/astral-php/astral) (Apps / Core / Components).
+> Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).
 
-## Installation (quand publié)
+## Installation
 
 ```bash
 composer create-project astral-php/astral-starter mon-app
