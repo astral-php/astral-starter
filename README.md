@@ -5,7 +5,7 @@ Application **from scratch** pour [Astral](https://github.com/astral-php) — au
 Pas d’articles, pas d’API démo, pas de `/docs` : une base vierge pour votre métier et votre design.
 
 [![PHP](https://img.shields.io/badge/PHP-8.1%E2%80%938.5-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.1-blue)](./CHANGELOG.md)
 
 > Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).
 
