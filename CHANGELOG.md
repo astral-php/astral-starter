@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2] — 2026-10-08
+
+### Ajouté
+
+- Suite PHPUnit : smokes HTTP (`tests/Http`) via `Router::handle()` (status 200/302).
+- Dépendance `astral-php/astral-core:^1.2.4`.
+
 ## [0.1.1] — 2026-10-04
 
 ### Ajouté
