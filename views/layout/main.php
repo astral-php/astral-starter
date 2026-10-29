@@ -180,7 +180,7 @@
                 <?php if ($auth->check()): ?>
                     <span style="color:var(--muted)"><?= htmlspecialchars($auth->name(), ENT_QUOTES, 'UTF-8') ?></span>
                     <a href="/profile">Profil</a>
-                    <?php if ($auth->is(\Core\Auth\Role::ADMIN)): ?>
+                    <?php if ($auth->is(\Core\Auth\Role::Admin)): ?>
                         <a href="/admin/users">Admin</a>
                     <?php endif ?>
                     <form method="POST" action="/logout" style="display:inline;margin:0">

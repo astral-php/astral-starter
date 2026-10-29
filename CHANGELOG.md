@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0] — 2026-10-29
+
+### Breaking
+
+- PHP **^8.3**
+- `astral-php/astral-core` **^2.0**
+- `Role::Admin` / `User` / `Guest` (enum) — valeurs string inchangées
+
+### Ajouté
+
+- `UPGRADE-2.0.md`
+
 ## [0.1.2] — 2026-10-08
 
 ### Ajouté

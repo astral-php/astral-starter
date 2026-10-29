@@ -4,15 +4,16 @@ Application **from scratch** pour [Astral](https://github.com/astral-php) — au
 
 Pas d’articles, pas d’API démo, pas de `/docs` : une base vierge pour votre métier et votre design.
 
-[![PHP](https://img.shields.io/badge/PHP-8.1%E2%80%938.5-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-0.1.1-blue)](./CHANGELOG.md)
+[![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue)](./CHANGELOG.md)
 
-> Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).
+> Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).  
+> Migration 0.x → 2.0 : [`UPGRADE-2.0.md`](./UPGRADE-2.0.md).
 
 ## Installation
 
 ```bash
-composer create-project astral-php/astral-starter mon-app
+composer create-project astral-php/astral-starter:^2.0 mon-app
 cd mon-app
 cp .env.example .env
 php -S 127.0.0.1:8082 -t public public/router.php
@@ -20,20 +21,16 @@ php -S 127.0.0.1:8082 -t public public/router.php
 
 Puis ouvrir http://127.0.0.1:8082 → **Créer le compte admin** (`/register`).
 
-## En local (workspace)
+## Compatibilité
 
-```bash
-cd components-astral/astral-starter
-composer install
-cp .env.example .env
-php -S 127.0.0.1:8082 -t public public/router.php
-```
+- PHP `^8.3`
+- `astral-php/astral-core` `^2.0`
 
 ## Contenu
 
 | Élément | Statut |
 |---------|--------|
-| `astral-php/astral-core` | ✅ dépendance |
+| `astral-php/astral-core` | ✅ ^2.0 |
 | Login / register / logout | ✅ |
 | Forgot / reset password, verify e-mail | ✅ (selon `AUTH_REGISTRATION`) |
 | Admin users / rôles | ✅ `/admin/users` |
@@ -44,9 +41,10 @@ php -S 127.0.0.1:8082 -t public public/router.php
 
 ```env
 APP_NAME="Astral Starter"
+APP_VERSION=2.0.0
 AUTH_REGISTRATION=direct   # ou confirm
 ASTRAL_GITHUB_URL=https://github.com/astral-php
-ASTRAL_WEBSITE_URL=https://github.com/astral-php
+ASTRAL_WEBSITE_URL=https://astral-php.dev
 ```
 
 ## Ensuite
@@ -54,7 +52,7 @@ ASTRAL_WEBSITE_URL=https://github.com/astral-php
 ```bash
 php bin/console make:module Article
 composer require astral-php/astral-form
-composer require astral-php/astral-template
+composer require astral-php/astral-cache
 ```
 
 ## Licence
