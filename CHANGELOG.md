@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.0] — 2026-10-30
+
+### Modifié
+
+- `astral-php/astral-core` **^2.1** (readonly / Override / VO opt-in côté core — API app inchangée)
+
+### Notes
+
+- PHP `^8.3` inchangé. Guide core : [`UPGRADE-2.1.md`](https://github.com/astral-php/astral-core/blob/main/UPGRADE-2.1.md).
+
 ## [2.0.0] — 2026-10-29
 
 ### Breaking
