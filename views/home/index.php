@@ -6,7 +6,8 @@
         Astral Starter
     </h1>
     <p style="font-size:1.1rem;color:var(--muted);max-width:36rem;line-height:1.55;margin:0 0 1.75rem">
-        Base vierge pour votre métier et votre design.
+        Base vierge pour votre métier et votre design
+        (<strong style="color:var(--ink)">Nova green</strong>).
         Auth, admin utilisateurs, et le moteur <strong style="color:var(--ink)">astral-core</strong> — rien de plus.
     </p>
 

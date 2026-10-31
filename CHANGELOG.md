@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.1] — 2026-10-31
+
+### Modifié
+
+- Identité UI explicitée **nova-green** (footer / home)
+
 ## [2.1.0] — 2026-10-30
 
 ### Modifié

@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
+            /* Nova green */
             --ink: #1a1f1c;
             --muted: #5c6b63;
             --paper: #f4f7f5;
@@ -206,7 +207,7 @@
         </main>
 
         <footer>
-            Astral Starter · basé sur <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
+            Astral Starter · nova-green · <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
         </footer>
     </div>
 </body>
