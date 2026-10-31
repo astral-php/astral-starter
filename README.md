@@ -5,7 +5,7 @@ Application **from scratch** pour [Astral](https://github.com/astral-php) — au
 Pas d’articles, pas d’API démo, pas de `/docs` : une base vierge pour votre métier et votre design.
 
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-2.1.1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.1.2-blue)](./CHANGELOG.md)
 
 > Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).  
 > Migration 0.x → 2.0 : [`UPGRADE-2.0.md`](./UPGRADE-2.0.md) · core 2.1 : bump `astral-core:^2.1`.
@@ -41,7 +41,7 @@ Puis ouvrir http://127.0.0.1:8082 → **Créer le compte admin** (`/register`).
 
 ```env
 APP_NAME="Astral Starter"
-APP_VERSION=2.1.1
+APP_VERSION=2.1.2
 AUTH_REGISTRATION=direct   # ou confirm
 ASTRAL_GITHUB_URL=https://github.com/astral-php
 ASTRAL_WEBSITE_URL=https://astral-php.dev

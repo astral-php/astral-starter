@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.2] — 2026-10-31
+
+### Corrigé
+
+- Dépendance **astral-core 2.1.2** — restaure `bin/console` (fatals readonly / `#[\Override]` sur `Console` en 2.1.0).
+
 ## [2.1.1] — 2026-10-31
 
 ### Modifié
