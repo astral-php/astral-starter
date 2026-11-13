@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-$errors = $errors ?? [];
-if (empty($errors)) {
-    return;
-}
+$errors = is_array($errors ?? null) ? $errors : [];
 $flat = [];
 foreach ($errors as $messages) {
-    foreach ((array) $messages as $msg) {
-        $flat[] = $msg;
+    foreach ((array) $messages as $message) {
+        if (is_scalar($message) && (string) $message !== '') {
+            $flat[] = (string) $message;
+        }
     }
 }
-if (empty($flat)) {
+if ($flat === []) {
     return;
 }
 ?>
-<div class="form-errors">
-    <p style="margin:0;font-weight:600">Veuillez corriger les erreurs suivantes :</p>
-    <ul>
-        <?php foreach ($flat as $msg): ?>
-            <li><?= htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') ?></li>
-        <?php endforeach; ?>
-    </ul>
+<div class="nova-alert nova-alert-danger" role="alert" aria-live="assertive">
+    <div>
+        <p style="margin:0 0 .5rem;font-weight:650">Veuillez corriger les erreurs suivantes :</p>
+        <ul style="margin:0;padding-inline-start:1.2rem">
+            <?php foreach ($flat as $message): ?>
+                <li><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
 </div>

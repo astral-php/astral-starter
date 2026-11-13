@@ -1,56 +1,27 @@
 <!-- Vue : user/create -->
-<div class="max-w-md mx-auto">
-    <a href="/users" class="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-6 transition">
-        &larr; Retour à la liste
-    </a>
-
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-        <h1 class="text-2xl font-bold text-gray-900 mb-6">
-            <?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>
-        </h1>
-
-        <form method="POST" action="/users" class="space-y-5">
-
+<section class="nova-page nova-page--narrow">
+    <a href="/users" class="nova-btn nova-btn-outline nova-btn-sm">&larr; Retour à la liste</a>
+    <section class="nova-card" style="margin-block:1.25rem">
+        <header class="nova-card-header"><h1 class="nova-page-title"><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></h1></header>
+        <form method="POST" action="/users" class="nova-stack">
             <?= $csrf->field() ?>
             <?= $viewEngine->partial('partials/validation-errors', ['errors' => $errors ?? []]) ?>
-
-            <!-- Nom -->
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
-                <input type="text" id="name" name="name"
-                       value="<?= htmlspecialchars($old['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
-                       class="w-full border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition
-                              <?= !empty($errors['name']) ? 'border-red-400 bg-red-50' : 'border-gray-200' ?>"
-                       placeholder="Jean Dupont">
+            <div class="nova-form-group">
+                <label class="nova-label" for="name">Nom complet</label>
+                <input class="nova-input" type="text" id="name" name="name" value="<?= htmlspecialchars($old['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="Jean Dupont" autocomplete="name" aria-invalid="<?= !empty($errors['name']) ? 'true' : 'false' ?>">
                 <?= $viewEngine->partial('partials/field-error', ['field' => 'name', 'errors' => $errors ?? []]) ?>
             </div>
-
-            <!-- E-mail -->
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Adresse e-mail</label>
-                <input type="email" id="email" name="email"
-                       value="<?= htmlspecialchars($old['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
-                       class="w-full border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition
-                              <?= !empty($errors['email']) ? 'border-red-400 bg-red-50' : 'border-gray-200' ?>"
-                       placeholder="jean@example.com">
+            <div class="nova-form-group">
+                <label class="nova-label" for="email">Adresse e-mail</label>
+                <input class="nova-input" type="email" id="email" name="email" value="<?= htmlspecialchars($old['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="jean@example.com" autocomplete="email" aria-invalid="<?= !empty($errors['email']) ? 'true' : 'false' ?>">
                 <?= $viewEngine->partial('partials/field-error', ['field' => 'email', 'errors' => $errors ?? []]) ?>
             </div>
-
-            <!-- Mot de passe -->
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
-                <input type="password" id="password" name="password" minlength="8"
-                       class="w-full border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 transition
-                              <?= !empty($errors['password']) ? 'border-red-400 bg-red-50' : 'border-gray-200' ?>"
-                       placeholder="••••••••">
+            <div class="nova-form-group">
+                <label class="nova-label" for="password">Mot de passe</label>
+                <input class="nova-input" type="password" id="password" name="password" minlength="8" autocomplete="new-password" placeholder="••••••••" aria-invalid="<?= !empty($errors['password']) ? 'true' : 'false' ?>">
                 <?= $viewEngine->partial('partials/field-error', ['field' => 'password', 'errors' => $errors ?? []]) ?>
             </div>
-
-            <button type="submit"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl transition shadow text-sm">
-                Créer le compte
-            </button>
-
+            <div><button type="submit" class="nova-btn nova-btn-primary nova-btn-block">Créer le compte</button></div>
         </form>
-    </div>
-</div>
+    </section>
+</section>

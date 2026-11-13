@@ -1,59 +1,63 @@
 # astral-starter
 
-Application **from scratch** pour [Astral](https://github.com/astral-php) — auth, admin utilisateurs, layout simple.
-
-Pas d’articles, pas d’API démo, pas de `/docs` : une base vierge pour votre métier et votre design.
+Application **from scratch** pour [Astral](https://github.com/astral-php) — auth, admin utilisateurs, **Nova Design**, CLI `php astral`.
 
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-2.1.2-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.2.0-blue)](./CHANGELOG.md)
 
-> Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/) (Apps / Core / Components).  
-> Migration 0.x → 2.0 : [`UPGRADE-2.0.md`](./UPGRADE-2.0.md) · core 2.1 : bump `astral-core:^2.1`.
+> Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/)  
+> Feuille **2.2** : fusion du bac `astral-starter-nova` (Nova 1.1 + CLI).
 
 ## Installation
 
 ```bash
-composer create-project astral-php/astral-starter:^2.1 mon-app
+composer create-project astral-php/astral-starter:^2.2 mon-app
 cd mon-app
-cp .env.example .env
-php -S 127.0.0.1:8082 -t public public/router.php   
+# post-create lance nova:publish si disponible
+composer nova:publish
+cp .env.example .env   # si besoin
+php astral serve
 ```
 
-Puis ouvrir http://127.0.0.1:8082 → **Créer le compte admin** (`/register`).
+Puis http://127.0.0.1:8082 → **Créer le compte admin** (`/register`).
 
 ## Compatibilité
 
 - PHP `^8.3`
-- `astral-php/astral-core` `^2.1`
+- `astral-php/astral-core` `^2.1` (ligne CLI 2.2 en local / tag à venir)
+- `astral-php/astral-nova-design` `^1.1`
 
 ## Contenu
 
 | Élément | Statut |
 |---------|--------|
-| `astral-php/astral-core` | ✅ ^2.1 |
-| Login / register / logout | ✅ |
-| Forgot / reset password, verify e-mail | ✅ (selon `AUTH_REGISTRATION`) |
-| Admin users / rôles | ✅ `/admin/users` |
-| Accueil + liens GitHub / site | ✅ |
+| Nova Design (css · icons · template-nova) | ✅ ^1.1 |
+| CLI `php astral` (+ `bin/console`) | ✅ |
+| `composer nova:publish` | ✅ |
+| Login / register / admin users | ✅ |
+| Primitives layout `.nova-grid-auto` / `.nova-split` | ✅ |
+| Adaptateurs Tailwind (opt-in) | ✅ v3 preset · v4 `@theme` |
 | Articles / API / docs embarquées | ❌ volontairement absents |
 
-## Configuration
-
-```env
-APP_NAME="Astral Starter"
-APP_VERSION=2.1.2
-AUTH_REGISTRATION=direct   # ou confirm
-ASTRAL_GITHUB_URL=https://github.com/astral-php
-ASTRAL_WEBSITE_URL=https://astral-php.dev
-```
-
-## Ensuite
+## CLI
 
 ```bash
-php bin/console make:module Article
-composer require astral-php/astral-form
-composer require astral-php/astral-cache
+php astral list
+php astral serve
+php astral make:module Article [--api] [--no-migrate]
+php astral migrate
 ```
+
+Commandes app : `app/Console/` via `config/console.php`.
+
+## Nova
+
+```bash
+composer nova:publish   # après composer update des packages Nova
+```
+
+- Assets : `public/assets/nova/` · branding : `public/assets/app/`
+- Thème : `data-nova-theme` sur le layout
 
 ## Licence
 

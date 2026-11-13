@@ -1,16 +1,23 @@
 # Changelog
 
-## [2.1.2] — 2026-10-31
+## [2.2.0] — 2026-11-13
 
-### Corrigé
+### Ajouté
 
-- Dépendance **astral-core 2.1.2** — restaure `bin/console` (fatals readonly / `#[\Override]` sur `Console` en 2.1.0).
-
-## [2.1.1] — 2026-10-31
+- **Nova Design** `^1.1` (css · icons · template-nova) + `composer nova:publish`
+- CLI **`php astral`** (Factory core) · `config/console.php` · `app/Console/`
+- Primitives layout `.nova-grid-auto` / `.nova-split` · adaptateurs Tailwind v3/v4 (opt-in)
+- `astral-testing` + `astral-debug` en require-dev
 
 ### Modifié
 
-- Identité UI explicitée **nova-green** (footer / home)
+- Fusion du bac `astral-starter-nova` → starter officiel (feuille 2.2)
+- README / layouts / assets Nova
+
+### Notes
+
+- Require `astral-core:^2.2` + `astral-nova-design:^1.1` (Packagist).
+- Dev local : path Composer optionnels (hors package publié).
 
 ## [2.1.0] — 2026-10-30
 

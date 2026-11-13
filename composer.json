@@ -1,23 +1,26 @@
 {
   "name": "astral-php/astral-starter",
-  "description": "Astral Starter — application from scratch (auth, admin, layout simple) basée sur astral-core",
+  "description": "Application from scratch Astral MVC — Nova Design, CLI astral, auth & admin.",
   "type": "project",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "license": "MIT",
   "keywords": [
     "astral",
     "php",
     "mvc",
     "starter",
-    "skeleton"
+    "nova"
   ],
   "homepage": "https://github.com/astral-php/astral-starter",
   "require": {
     "php": "^8.3",
-    "astral-php/astral-core": "^2.1"
+    "astral-php/astral-core": "^2.2",
+    "astral-php/astral-nova-design": "^1.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.6 || ^10.5 || ^11.0"
+    "phpunit/phpunit": "^9.6 || ^10.5 || ^11.0",
+    "astral-php/astral-testing": "^0.2",
+    "astral-php/astral-debug": "^0.2"
   },
   "autoload": {
     "psr-4": {
@@ -35,7 +38,12 @@
   },
   "scripts": {
     "serve": "php -S 127.0.0.1:8082 -t public public/router.php",
-    "test": "phpunit --configuration phpunit.xml"
+    "test": "phpunit --configuration phpunit.xml",
+    "nova:publish": "php bin/nova-publish.php",
+    "post-create-project-cmd": [
+      "@php -r \"if (!file_exists('.env') && file_exists('.env.example')) { copy('.env.example', '.env'); }\"",
+      "@nova:publish"
+    ]
   },
   "minimum-stability": "stable",
   "prefer-stable": true

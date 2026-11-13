@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-$field   = $field ?? '';
-$errors  = $errors ?? [];
+$field = (string) ($field ?? '');
+$errors = is_array($errors ?? null) ? $errors : [];
 $message = $errors[$field][0] ?? null;
-if ($message === null || $message === '') {
+if (!is_string($message) || $message === '') {
     return;
 }
-?>
-<p class="field-error"><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></p>
+
+echo \Astral\TemplateNova\Template::partial('forms/field-error', [
+    'message' => $message,
+]);

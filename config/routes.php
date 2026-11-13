@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Controllers\Admin\UserController as AdminUserController;
 use App\Controllers\AuthController;
 use App\Controllers\HomeController;
+use App\Controllers\NovaTemplatesController;
 use App\Controllers\ProfileController;
 use App\Controllers\UserController;
 use Core\Auth\Middleware\AdminMiddleware;
@@ -15,6 +16,13 @@ use Core\Router;
 return function (Router $router): void {
 
     $router->get('/', HomeController::class, 'index');
+
+    $router->get('/nova-templates', NovaTemplatesController::class, 'index');
+    $router->get('/nova-templates/partials', NovaTemplatesController::class, 'partials');
+    $router->get('/nova-templates/layout/admin', NovaTemplatesController::class, 'layoutAdmin');
+    $router->get('/nova-templates/layout/auth', NovaTemplatesController::class, 'layoutAuth');
+    $router->get('/nova-templates/layout/marketing', NovaTemplatesController::class, 'layoutMarketing');
+    $router->get('/nova-templates/errors/:code', NovaTemplatesController::class, 'errorPreview');
 
     $router->get('/login',     AuthController::class, 'loginForm')->middleware(GuestMiddleware::class);
     $router->post('/login',    AuthController::class, 'login')->middleware(GuestMiddleware::class);
