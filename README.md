@@ -56,7 +56,7 @@ Boot : [`public/assets/nova/nova-boot.js`](./public/assets/nova/nova-boot.js) (i
 | `source` | Usage |
 |----------|--------|
 | `local` | tout sous `/assets/nova/` (offline) |
-| `cdn` (défaut) | CSS `@1.1.0` · icons `@1.0.0` · JS IIFE `@main` (puis tag 1.2.0) |
+| `cdn` (défaut) | CSS + JS IIFE `@1.2.0` · icons `@1.0.0` |
 
 ```bash
 composer nova:publish   # mode local : après composer update Nova

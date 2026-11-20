@@ -11,7 +11,7 @@
 
 ### Notes
 
-- `source: cdn` : CSS `@1.1.0` · icons `@1.0.0` · JS IIFE `@main` (tag 1.2.0 ensuite)
+- `source: cdn` : CSS + JS IIFE `@1.2.0` · icons `@1.0.0`
 - Après `composer update` Nova (local) → `composer nova:publish`
 
 ## [2.2.0] — 2026-11-13

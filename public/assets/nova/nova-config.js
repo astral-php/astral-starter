@@ -10,16 +10,14 @@ window.NovaConfig = {
   /**
    * cdn  → CSS/icons/JS via jsDelivr
    * local → tout sous /assets/nova/
-   *
-   * IIFE : @main jusqu’au tag 1.2.0 (absent de 1.1.0)
    */
   source: 'cdn',
-  version: '1.1.0',
+  version: '1.2.0',
   assets: {
     cdn: {
-      css: 'https://cdn.jsdelivr.net/gh/astral-php/astral-nova-css@1.1.0/dist/nova.min.css',
+      css: 'https://cdn.jsdelivr.net/gh/astral-php/astral-nova-css@1.2.0/dist/nova.min.css',
       icons: 'https://cdn.jsdelivr.net/gh/astral-php/astral-nova-icons@1.0.0/dist/nova-icons.css',
-      js: 'https://cdn.jsdelivr.net/gh/astral-php/astral-nova-css@main/dist/nova.iife.min.js',
+      js: 'https://cdn.jsdelivr.net/gh/astral-php/astral-nova-css@1.2.0/dist/nova.iife.min.js',
     },
     local: {
       css: '/assets/nova/nova.css',
