@@ -3,7 +3,7 @@
 Application **from scratch** pour [Astral](https://github.com/astral-php) — auth, admin utilisateurs, **Nova Design**, CLI `php astral`.
 
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-2.2.0-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.2.1-blue)](./CHANGELOG.md)
 
 > Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/)  
 > Feuille **2.2** : fusion du bac `astral-starter-nova` (Nova 1.1 + CLI).
