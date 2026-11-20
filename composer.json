@@ -41,8 +41,7 @@
     "test": "phpunit --configuration phpunit.xml",
     "nova:publish": "php bin/nova-publish.php",
     "post-create-project-cmd": [
-      "@php -r \"if (!file_exists('.env') && file_exists('.env.example')) { copy('.env.example', '.env'); }\"",
-      "@nova:publish"
+      "@php -r \"if (!file_exists('.env') && file_exists('.env.example')) { copy('.env.example', '.env'); }\""
     ]
   },
   "minimum-stability": "stable",

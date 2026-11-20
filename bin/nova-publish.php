@@ -69,28 +69,23 @@ try {
         $copied[] = "public/assets/nova/{$file}";
     }
 
-    // JS modules (nova.js applicatif est conservé s'il existe)
+    // JS IIFE (fichier unique CDN / local) + modules ES optionnels
+    foreach (['nova.iife.js', 'nova.iife.min.js'] as $file) {
+        $from = $cssPkg . DIRECTORY_SEPARATOR . 'dist' . DIRECTORY_SEPARATOR . $file;
+        if (!is_file($from)) {
+            throw new RuntimeException("IIFE absente : {$from} — lancer npm run build dans astral-nova-css");
+        }
+        $to = $dest . DIRECTORY_SEPARATOR . $file;
+        $copyFile($from, $to);
+        $copied[] = "public/assets/nova/{$file}";
+    }
+
     $jsSrc = $cssPkg . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'javascript';
     foreach (['index.js', 'theme.js', 'components.js'] as $file) {
         $from = $jsSrc . DIRECTORY_SEPARATOR . $file;
         $to = $dest . DIRECTORY_SEPARATOR . 'javascript' . DIRECTORY_SEPARATOR . $file;
         $copyFile($from, $to);
         $copied[] = "public/assets/nova/javascript/{$file}";
-    }
-
-    $novaJs = $dest . DIRECTORY_SEPARATOR . 'nova.js';
-    if (!is_file($novaJs)) {
-        $stub = <<<'JS'
-import { theme, createInteractions } from './javascript/index.js';
-createInteractions();
-document.querySelector('[data-nova-theme-toggle]')?.addEventListener('click', () => {
-  theme.setMode(theme.getMode() === 'dark' ? 'light' : 'dark');
-});
-JS;
-        if (file_put_contents($novaJs, $stub) === false) {
-            throw new RuntimeException('Écriture impossible : nova.js');
-        }
-        $copied[] = 'public/assets/nova/nova.js (créé)';
     }
 
     // Icons
@@ -123,5 +118,5 @@ echo "✓ Assets Nova publiés (" . count($copied) . " fichiers)" . PHP_EOL;
 foreach ($copied as $line) {
     echo "  · {$line}" . PHP_EOL;
 }
-echo PHP_EOL . "Rappel : après composer update des packages Nova → composer nova:publish" . PHP_EOL;
+echo PHP_EOL . "Rappel : non lancé au create-project — à relancer après composer update Nova (mode local)." . PHP_EOL;
 exit(0);

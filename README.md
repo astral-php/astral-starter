@@ -13,9 +13,7 @@ Application **from scratch** pour [Astral](https://github.com/astral-php) — au
 ```bash
 composer create-project astral-php/astral-starter:^2.2 mon-app
 cd mon-app
-# post-create lance nova:publish si disponible
-composer nova:publish
-cp .env.example .env   # si besoin
+cp .env.example .env   # si besoin (souvent déjà copié au create)
 php astral serve
 ```
 
@@ -52,12 +50,20 @@ Commandes app : `app/Console/` via `config/console.php`.
 
 ## Nova
 
+Config **100 % JS** : [`public/assets/nova/nova-config.js`](./public/assets/nova/nova-config.js)  
+Boot : [`public/assets/nova/nova-boot.js`](./public/assets/nova/nova-boot.js) (injecte CSS/icons + **un** JS IIFE)
+
+| `source` | Usage |
+|----------|--------|
+| `local` | tout sous `/assets/nova/` (offline) |
+| `cdn` (défaut) | CSS `@1.1.0` · icons `@1.0.0` · JS IIFE `@main` (puis tag 1.2.0) |
+
 ```bash
-composer nova:publish   # après composer update des packages Nova
+composer nova:publish   # mode local : après composer update Nova
 ```
 
-- Assets : `public/assets/nova/` · branding : `public/assets/app/`
-- Thème : `data-nova-theme` sur le layout
+- Composition app : `public/assets/app/css/app.css`
+- Layout : uniquement `nova-config.js` + `nova-boot.js` (pas de résolution PHP)
 
 ## Licence
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Astral\TemplateNova\Template;
 
 ?>
@@ -11,9 +13,10 @@ use Astral\TemplateNova\Template;
     <meta name="theme-color" content="#0d7a45">
     <title><?= htmlspecialchars($title ?? 'Astral Starter', ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="icon" href="/assets/app/branding/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/nova/nova.css?v=1.1.0">
-    <link rel="stylesheet" href="/assets/nova/nova-icons.css?v=1.1.0">
     <link rel="stylesheet" href="/assets/app/css/app.css">
+    <!-- Nova : config JS + boot (CDN ou local) — pas de résolution PHP -->
+    <script src="/assets/nova/nova-config.js"></script>
+    <script src="/assets/nova/nova-boot.js"></script>
 </head>
 <body>
 <header class="nova-header" data-nova-header>
@@ -84,6 +87,5 @@ use Astral\TemplateNova\Template;
         <span class="nova-footer-note">Une base solide pour vos projets <?= Template::partial('interface/icon', ['name' => 'heart']) ?></span>
     </div>
 </footer>
-<script type="module" src="/assets/nova/nova.js?v=1.1.0"></script>
 </body>
 </html>

@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.1] — 2026-11-20 (dev)
+
+### Modifié
+
+- `nova:publish` **retiré** du `post-create-project-cmd` (create-project plus rapide)
+- CSS app unique : `app.css` · suppression `starter.css` (deprecated vide)
+- Nova **100 % JS** : `nova-config.js` + `nova-boot.js` · plus de `config/nova.php`
+- JS unique : `nova.iife.min.js` (`window.Nova`) — CDN ou local
+
+### Notes
+
+- `source: cdn` : CSS `@1.1.0` · icons `@1.0.0` · JS IIFE `@main` (tag 1.2.0 ensuite)
+- Après `composer update` Nova (local) → `composer nova:publish`
+
 ## [2.2.0] — 2026-11-13
 
 ### Ajouté
